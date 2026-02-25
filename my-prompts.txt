@@ -1,0 +1,7 @@
+1.I want to create new project.
+Skill extraction tool. An app that reads a new employee's CV and IFU, extracts skills and saves them in a structured format.
+For frontend use React, typescript, mui and tanstack query. Try to use composition and tanstack query for state management.
+For backend use .net 10, MediatR,ef core, clean architecture with Commands and use DDD. Ask clarifying questions. Create docker-compose that allows to run everything with a single command docker-compose up. For db use postgres. I want unit tests for both frontend and backend. I want an admin panel. I want simple login and 2 roles: Admin and User. Add some pretty graphs for admin view.
+I want to have at least several pages, routing. I want to first create a backlog of epics and user stories. Then I will work on them 1 by 1 with you.
+
+2.I want you generate this backlog as folders and files in this project. I also want a way of ticking them off so I could see what is done
