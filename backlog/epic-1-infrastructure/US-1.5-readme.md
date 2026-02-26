@@ -1,7 +1,7 @@
 # US-1.5 — README with Setup Instructions
 
 **Epic:** Epic 1 — Project Setup & Infrastructure  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

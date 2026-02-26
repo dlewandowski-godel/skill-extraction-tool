@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SkillExtractor.API/SkillExtractor.API.csproj" />
+    <Project Path="src/SkillExtractor.Application/SkillExtractor.Application.csproj" />
+    <Project Path="src/SkillExtractor.Domain/SkillExtractor.Domain.csproj" />
+    <Project Path="src/SkillExtractor.Infrastructure/SkillExtractor.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SkillExtractor.Tests/SkillExtractor.Tests.csproj" />
+  </Folder>
+</Solution>

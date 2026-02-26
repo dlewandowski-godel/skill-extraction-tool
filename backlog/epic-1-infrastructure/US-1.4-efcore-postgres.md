@@ -1,7 +1,7 @@
 # US-1.4 — EF Core + PostgreSQL Setup
 
 **Epic:** Epic 1 — Project Setup & Infrastructure  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

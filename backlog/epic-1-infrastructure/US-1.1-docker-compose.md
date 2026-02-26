@@ -1,7 +1,7 @@
 # US-1.1 — Docker Compose Full Stack
 
 **Epic:** Epic 1 — Project Setup & Infrastructure  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

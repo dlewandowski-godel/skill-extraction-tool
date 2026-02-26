@@ -5,3 +5,5 @@ For backend use .net 10, MediatR,ef core, clean architecture with Commands and u
 I want to have at least several pages, routing. I want to first create a backlog of epics and user stories. Then I will work on them 1 by 1 with you.
 
 2.I want you generate this backlog as folders and files in this project. I also want a way of ticking them off so I could see what is done
+
+3. start working on epic-1. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 1.
