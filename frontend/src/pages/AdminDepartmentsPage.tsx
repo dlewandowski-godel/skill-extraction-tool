@@ -1,3 +1,4 @@
+import { DepartmentRequiredSkillsSection } from "@/components/admin/DepartmentRequiredSkillsSection";
 import { useCreateDepartmentMutation } from "@/hooks/useCreateDepartmentMutation";
 import { useDeleteDepartmentMutation } from "@/hooks/useDeleteDepartmentMutation";
 import { useDepartmentsQuery } from "@/hooks/useDepartmentsQuery";
@@ -171,44 +172,48 @@ export function AdminDepartmentsPage() {
         ) : (
           departments.map((dept) => (
             <Card key={dept.id} sx={{ mb: 2 }}>
-              <CardContent
-                sx={{ display: "flex", alignItems: "center", gap: 2 }}
-              >
-                <Box sx={{ flexGrow: 1 }}>
-                  <Typography variant="h6">{dept.name}</Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {dept.employeeCount} employee
-                    {dept.employeeCount !== 1 ? "s" : ""}
-                  </Typography>
-                </Box>
-                <Tooltip title="Rename">
-                  <IconButton
-                    onClick={() => openRename(dept.id, dept.name)}
-                    aria-label="Rename department"
-                  >
-                    <EditIcon />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip
-                  title={
-                    dept.employeeCount > 0
-                      ? "Cannot delete — has employees"
-                      : "Delete"
-                  }
-                >
-                  <span>
+              <CardContent>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6">{dept.name}</Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {dept.employeeCount} employee
+                      {dept.employeeCount !== 1 ? "s" : ""}
+                      {" · "}
+                      {dept.requiredSkillCount} required skill
+                      {dept.requiredSkillCount !== 1 ? "s" : ""}
+                    </Typography>
+                  </Box>
+                  <Tooltip title="Rename">
                     <IconButton
-                      color="error"
-                      onClick={() =>
-                        setDeleteTarget({ id: dept.id, name: dept.name })
-                      }
-                      disabled={dept.employeeCount > 0}
-                      aria-label="Delete department"
+                      onClick={() => openRename(dept.id, dept.name)}
+                      aria-label="Rename department"
                     >
-                      <DeleteIcon />
+                      <EditIcon />
                     </IconButton>
-                  </span>
-                </Tooltip>
+                  </Tooltip>
+                  <Tooltip
+                    title={
+                      dept.employeeCount > 0
+                        ? "Cannot delete — has employees"
+                        : "Delete"
+                    }
+                  >
+                    <span>
+                      <IconButton
+                        color="error"
+                        onClick={() =>
+                          setDeleteTarget({ id: dept.id, name: dept.name })
+                        }
+                        disabled={dept.employeeCount > 0}
+                        aria-label="Delete department"
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                    </span>
+                  </Tooltip>
+                </Box>
+                <DepartmentRequiredSkillsSection departmentId={dept.id} />
               </CardContent>
             </Card>
           ))

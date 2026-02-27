@@ -22,7 +22,11 @@ public class SkillConfiguration : IEntityTypeConfiguration<Skill>
     builder.Property(s => s.Aliases)
            .HasColumnType("text[]");
 
-    builder.HasIndex(s => s.Name).IsUnique();
+    builder.Property(s => s.CreatedAt)
+           .IsRequired();
+
+    // Unique per (Name, Category) — same name can exist in different categories
+    builder.HasIndex(s => new { s.Name, s.Category }).IsUnique();
     builder.HasIndex(s => s.IsActive);
   }
 }

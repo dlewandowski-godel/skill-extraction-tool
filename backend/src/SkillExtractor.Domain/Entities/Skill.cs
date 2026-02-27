@@ -16,6 +16,7 @@ public class Skill
   public List<string> Aliases { get; private set; } = new();
 
   public bool IsActive { get; private set; } = true;
+  public DateTime CreatedAt { get; private set; }
 
   // EF Core requires parameterless constructor
   private Skill() { }
@@ -31,6 +32,7 @@ public class Skill
       Category = category,
       Aliases = aliases?.ToList() ?? new List<string>(),
       IsActive = true,
+      CreatedAt = DateTime.UtcNow,
     };
   }
 

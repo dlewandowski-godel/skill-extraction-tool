@@ -4,6 +4,7 @@ import { AdminDashboardPage } from "@/pages/AdminDashboardPage";
 import { AdminDepartmentsPage } from "@/pages/AdminDepartmentsPage";
 import { AdminEmployeeListPage } from "@/pages/AdminEmployeeListPage";
 import { AdminEmployeeProfilePage } from "@/pages/AdminEmployeeProfilePage";
+import { AdminTaxonomyPage } from "@/pages/AdminTaxonomyPage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { ProfilePage } from "@/pages/ProfilePage";
@@ -33,6 +34,7 @@ function App() {
           />
           <Route path="/admin/departments" element={<AdminDepartmentsPage />} />
           <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
+          <Route path="/admin/taxonomy" element={<AdminTaxonomyPage />} />
           <Route
             path="/admin"
             element={<Navigate to="/admin/employees" replace />}
