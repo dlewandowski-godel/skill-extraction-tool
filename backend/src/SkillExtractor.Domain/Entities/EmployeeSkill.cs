@@ -26,8 +26,9 @@ public class EmployeeSkill
 
   public DateTime ExtractedAt { get; private set; }
 
-  // EF Core
-  private EmployeeSkill() { }
+  // Navigation property — loaded via .Include() for profile queries
+  public Skill? TaxonomySkill { get; private set; }
+
 
   /// <summary>Creates an auto-extracted skill record.</summary>
   public static EmployeeSkill Create(

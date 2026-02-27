@@ -17,6 +17,16 @@ public class EmployeeSkillRepository : IEmployeeSkillRepository
             .Where(e => e.UserId == userId)
             .ToListAsync(ct);
 
+  public Task<List<EmployeeSkill>> GetWithSkillsByUserAsync(Guid userId, CancellationToken ct = default)
+      => _db.EmployeeSkills
+            .Include(e => e.TaxonomySkill)
+            .Where(e => e.UserId == userId)
+            .ToListAsync(ct);
+
+  public Task<EmployeeSkill?> GetByUserAndSkillAsync(Guid userId, Guid skillId, CancellationToken ct = default)
+      => _db.EmployeeSkills
+            .FirstOrDefaultAsync(e => e.UserId == userId && e.SkillId == skillId, ct);
+
   /// <summary>
   /// Removes all auto-extracted (non-manual) skills originating from documents of
   /// <paramref name="documentType"/> for the given user.
@@ -34,6 +44,12 @@ public class EmployeeSkillRepository : IEmployeeSkillRepository
 
   public void AddRange(IEnumerable<EmployeeSkill> skills)
       => _db.EmployeeSkills.AddRange(skills);
+
+  public async Task AddAsync(EmployeeSkill skill, CancellationToken ct = default)
+      => await _db.EmployeeSkills.AddAsync(skill, ct);
+
+  public void Remove(EmployeeSkill skill)
+      => _db.EmployeeSkills.Remove(skill);
 
   public Task SaveChangesAsync(CancellationToken ct = default)
       => _db.SaveChangesAsync(ct);
