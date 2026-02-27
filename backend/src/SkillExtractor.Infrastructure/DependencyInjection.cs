@@ -45,6 +45,9 @@ public static class DependencyInjection
         services.AddScoped<IEmployeeSkillRepository, EmployeeSkillRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IAnalyticsRepository, AnalyticsRepository>();
+        services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+        services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+        services.AddScoped<IUserManagementService, UserManagementService>();
 
         // Extraction pipeline (singletons — stateless or own their state)
         services.AddSingleton<IPdfTextExtractor, PdfPigTextExtractor>();

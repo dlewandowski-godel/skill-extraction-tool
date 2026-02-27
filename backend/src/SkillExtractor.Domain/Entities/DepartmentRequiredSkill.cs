@@ -7,24 +7,24 @@ namespace SkillExtractor.Domain.Entities;
 /// </summary>
 public class DepartmentRequiredSkill
 {
-    public Guid Id { get; private set; }
-    public string DepartmentName { get; private set; } = string.Empty;
-    public Guid SkillId { get; private set; }
+  public Guid Id { get; private set; }
+  public string DepartmentName { get; private set; } = string.Empty;
+  public Guid SkillId { get; private set; }
 
-    /// <summary>Navigation property — loaded via .Include().</summary>
-    public Skill? Skill { get; private set; }
+  /// <summary>Navigation property — loaded via .Include().</summary>
+  public Skill? Skill { get; private set; }
 
-    private DepartmentRequiredSkill() { }
+  private DepartmentRequiredSkill() { }
 
-    public static DepartmentRequiredSkill Create(string departmentName, Guid skillId)
+  public static DepartmentRequiredSkill Create(string departmentName, Guid skillId)
+  {
+    ArgumentException.ThrowIfNullOrWhiteSpace(departmentName);
+    if (skillId == Guid.Empty) throw new ArgumentException("SkillId must not be empty.", nameof(skillId));
+    return new DepartmentRequiredSkill
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(departmentName);
-        if (skillId == Guid.Empty) throw new ArgumentException("SkillId must not be empty.", nameof(skillId));
-        return new DepartmentRequiredSkill
-        {
-            Id = Guid.NewGuid(),
-            DepartmentName = departmentName,
-            SkillId = skillId,
-        };
-    }
+      Id = Guid.NewGuid(),
+      DepartmentName = departmentName,
+      SkillId = skillId,
+    };
+  }
 }

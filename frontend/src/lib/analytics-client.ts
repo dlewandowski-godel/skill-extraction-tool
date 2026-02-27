@@ -50,7 +50,9 @@ export async function getSkillsByDepartment(): Promise<DepartmentSkillsDto[]> {
 export async function getSkillGaps(
   department?: string,
 ): Promise<SkillGapDto[]> {
-  const params = department ? `?department=${encodeURIComponent(department)}` : "";
+  const params = department
+    ? `?department=${encodeURIComponent(department)}`
+    : "";
   const { data } = await apiClient.get<SkillGapDto[]>(
     `/api/admin/analytics/skill-gaps${params}`,
   );

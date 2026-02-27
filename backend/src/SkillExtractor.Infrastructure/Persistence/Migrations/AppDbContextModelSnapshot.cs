@@ -185,6 +185,33 @@ namespace SkillExtractor.Infrastructure.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("SkillExtractor.Domain.Entities.Department", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("name");
+
+                    b.HasKey("Id")
+                        .HasName("pk_departments");
+
+                    b.HasIndex("Name")
+                        .IsUnique()
+                        .HasDatabaseName("ix_departments_name");
+
+                    b.ToTable("departments", (string)null);
+                });
+
             modelBuilder.Entity("SkillExtractor.Domain.Entities.DepartmentRequiredSkill", b =>
                 {
                     b.Property<Guid>("Id")
@@ -431,9 +458,9 @@ namespace SkillExtractor.Infrastructure.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
-                    b.Property<string>("Department")
-                        .HasColumnType("text")
-                        .HasColumnName("department");
+                    b.Property<Guid?>("DepartmentId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("department_id");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -446,7 +473,8 @@ namespace SkillExtractor.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("text")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
                         .HasColumnName("first_name");
 
                     b.Property<bool>("IsActive")
@@ -455,7 +483,8 @@ namespace SkillExtractor.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("text")
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
                         .HasColumnName("last_name");
 
                     b.Property<bool>("LockoutEnabled")
@@ -503,6 +532,9 @@ namespace SkillExtractor.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id")
                         .HasName("pk_asp_net_users");
+
+                    b.HasIndex("DepartmentId")
+                        .HasDatabaseName("ix_asp_net_users_department_id");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -593,6 +625,17 @@ namespace SkillExtractor.Infrastructure.Persistence.Migrations
                         .HasConstraintName("fk_employee_skills_skills_skill_id");
 
                     b.Navigation("TaxonomySkill");
+                });
+
+            modelBuilder.Entity("SkillExtractor.Infrastructure.Identity.ApplicationUser", b =>
+                {
+                    b.HasOne("SkillExtractor.Domain.Entities.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .HasConstraintName("fk_asp_net_users_departments_department_id");
+
+                    b.Navigation("Department");
                 });
 #pragma warning restore 612, 618
         }

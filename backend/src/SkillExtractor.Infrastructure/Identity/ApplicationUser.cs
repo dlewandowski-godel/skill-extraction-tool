@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using SkillExtractor.Domain.Entities;
 
 namespace SkillExtractor.Infrastructure.Identity;
 
@@ -9,8 +10,8 @@ public class ApplicationUser : IdentityUser<Guid>
   public bool IsActive { get; set; } = true;
   public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-  public string FullName => $"{FirstName} {LastName}".Trim();
+  public Guid? DepartmentId { get; set; }
+  public Department? Department { get; set; }
 
-  /// <summary>Populated in Epic 7 (employee management). Null until then.</summary>
-  public string? Department { get; set; }
+  public string FullName => $"{FirstName} {LastName}".Trim();
 }

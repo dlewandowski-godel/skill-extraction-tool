@@ -18,7 +18,12 @@ export interface SkillDto {
 export interface EmployeeProfileDto {
   userId: string;
   fullName: string;
+  firstName: string;
+  lastName: string;
   department: string | null;
+  departmentId: string | null;
+  role: string | null;
+  isActive: boolean;
   skills: SkillDto[];
 }
 

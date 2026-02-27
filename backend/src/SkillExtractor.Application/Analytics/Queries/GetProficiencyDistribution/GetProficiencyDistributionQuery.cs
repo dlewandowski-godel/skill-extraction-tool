@@ -8,10 +8,10 @@ public record GetProficiencyDistributionQuery : IRequest<List<ProficiencyDistrib
 
 public class GetProficiencyDistributionQueryHandler : IRequestHandler<GetProficiencyDistributionQuery, List<ProficiencyDistributionDto>>
 {
-    private readonly IAnalyticsRepository _repo;
+  private readonly IAnalyticsRepository _repo;
 
-    public GetProficiencyDistributionQueryHandler(IAnalyticsRepository repo) => _repo = repo;
+  public GetProficiencyDistributionQueryHandler(IAnalyticsRepository repo) => _repo = repo;
 
-    public Task<List<ProficiencyDistributionDto>> Handle(GetProficiencyDistributionQuery request, CancellationToken ct)
-        => _repo.GetProficiencyDistributionAsync(ct);
+  public Task<List<ProficiencyDistributionDto>> Handle(GetProficiencyDistributionQuery request, CancellationToken ct)
+      => _repo.GetProficiencyDistributionAsync(ct);
 }

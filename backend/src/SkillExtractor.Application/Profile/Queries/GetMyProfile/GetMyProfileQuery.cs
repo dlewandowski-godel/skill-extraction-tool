@@ -25,7 +25,6 @@ public class GetMyProfileQueryHandler : IRequestHandler<GetMyProfileQuery, Emplo
   {
     var profile = await _userRepo.GetProfileInfoAsync(request.UserId, cancellationToken);
     var fullName = profile?.FullName ?? string.Empty;
-    var department = profile?.Department;
 
     var employeeSkills = await _skillRepo.GetWithSkillsByUserAsync(request.UserId, cancellationToken);
 
@@ -42,6 +41,6 @@ public class GetMyProfileQueryHandler : IRequestHandler<GetMyProfileQuery, Emplo
         .ThenBy(s => s.SkillName)
         .ToList();
 
-    return new EmployeeProfileDto(request.UserId, fullName, department, skillDtos);
+    return new EmployeeProfileDto(request.UserId, fullName, profile?.FirstName ?? string.Empty, profile?.LastName ?? string.Empty, profile?.Department, profile?.DepartmentId, profile?.Role, profile?.IsActive ?? true, skillDtos);
   }
 }

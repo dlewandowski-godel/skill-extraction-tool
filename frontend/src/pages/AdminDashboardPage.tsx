@@ -1,6 +1,6 @@
-import { useSkillsByDepartmentQuery } from "@/hooks/useSkillsByDepartmentQuery";
-import { useSkillGapsQuery } from "@/hooks/useSkillGapsQuery";
 import { useProficiencyDistributionQuery } from "@/hooks/useProficiencyDistributionQuery";
+import { useSkillGapsQuery } from "@/hooks/useSkillGapsQuery";
+import { useSkillsByDepartmentQuery } from "@/hooks/useSkillsByDepartmentQuery";
 import { useTopSkillsQuery } from "@/hooks/useTopSkillsQuery";
 import { useUploadActivityQuery } from "@/hooks/useUploadActivityQuery";
 import type { DepartmentSkillsDto } from "@/lib/analytics-client";
@@ -70,10 +70,7 @@ function pivotDepartmentData(data: DepartmentSkillsDto[]) {
   const rows = data.map((dept) => ({
     department: dept.department,
     ...Object.fromEntries(
-      top5.map((s) => [
-        s,
-        dept.skills.find((sk) => sk.name === s)?.count ?? 0,
-      ]),
+      top5.map((s) => [s, dept.skills.find((sk) => sk.name === s)?.count ?? 0]),
     ),
   }));
 
@@ -126,7 +123,12 @@ function TopSkillsChart() {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis type="number" allowDecimals={false} />
-          <YAxis dataKey="skillName" type="category" width={130} tick={{ fontSize: 12 }} />
+          <YAxis
+            dataKey="skillName"
+            type="category"
+            width={130}
+            tick={{ fontSize: 12 }}
+          />
           <Tooltip />
           <Bar dataKey="employeeCount" name="Employees" fill="#1976d2" />
         </BarChart>
@@ -147,9 +149,17 @@ function SkillsByDepartmentChart() {
         </Typography>
       ) : (
         <ResponsiveContainer width="100%" height={320}>
-          <BarChart data={rows} margin={{ top: 4, right: 24, bottom: 40, left: 8 }}>
+          <BarChart
+            data={rows}
+            margin={{ top: 4, right: 24, bottom: 40, left: 8 }}
+          >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="department" tick={{ fontSize: 11 }} angle={-25} textAnchor="end" />
+            <XAxis
+              dataKey="department"
+              tick={{ fontSize: 11 }}
+              angle={-25}
+              textAnchor="end"
+            />
             <YAxis allowDecimals={false} />
             <Tooltip />
             <Legend />
@@ -186,10 +196,13 @@ function SkillGapChart() {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis type="number" domain={[0, 100]} unit="%" />
-            <YAxis dataKey="skillName" type="category" width={130} tick={{ fontSize: 12 }} />
-            <Tooltip
-              formatter={(value: number) => [`${value}%`, "Gap"]}
+            <YAxis
+              dataKey="skillName"
+              type="category"
+              width={130}
+              tick={{ fontSize: 12 }}
             />
+            <Tooltip formatter={(value: number) => [`${value}%`, "Gap"]} />
             <Bar dataKey="gapPercent" name="Gap %" radius={[0, 4, 4, 0]}>
               {data.map((entry, i) => (
                 <Cell
@@ -217,7 +230,10 @@ function UploadActivityChart() {
   return (
     <ChartCard title="Upload Activity (Last 30 Days)" loading={isLoading}>
       <ResponsiveContainer width="100%" height={260}>
-        <LineChart data={data} margin={{ top: 4, right: 24, bottom: 4, left: 8 }}>
+        <LineChart
+          data={data}
+          margin={{ top: 4, right: 24, bottom: 4, left: 8 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="date"

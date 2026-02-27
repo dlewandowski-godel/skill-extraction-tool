@@ -65,8 +65,11 @@ public class AuthService : IAuthService
   public async Task<LoginResult> LoginAsync(string email, string password)
   {
     var user = await _userManager.FindByEmailAsync(email);
-    if (user is null || !user.IsActive)
+    if (user is null)
       return new LoginResult(false, null, 0, null, "Invalid credentials.");
+
+    if (!user.IsActive)
+      return new LoginResult(false, null, 0, null, "Account is deactivated.");
 
     if (!await _userManager.CheckPasswordAsync(user, password))
       return new LoginResult(false, null, 0, null, "Invalid credentials.");

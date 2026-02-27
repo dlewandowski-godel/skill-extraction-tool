@@ -1,20 +1,32 @@
+import { EditEmployeeDialog } from "@/components/admin/EditEmployeeDialog";
 import { AddSkillDialog } from "@/components/skills/AddSkillDialog";
 import { ChangeProficiencyDialog } from "@/components/skills/ChangeProficiencyDialog";
 import { ProficiencyChip } from "@/components/skills/ProficiencyChip";
 import { RemoveSkillDialog } from "@/components/skills/RemoveSkillDialog";
+import { useAuth } from "@/contexts/AuthContext";
+import { useActivateEmployeeMutation } from "@/hooks/useActivateEmployeeMutation";
+import { useDeactivateEmployeeMutation } from "@/hooks/useDeactivateEmployeeMutation";
 import { useEmployeeProfileQuery } from "@/hooks/useEmployeeProfileQuery";
 import type { ProficiencyLevel, SkillDto } from "@/lib/profile-client";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import {
+  Alert,
   Box,
   Breadcrumbs,
   Card,
   CardContent,
+  Chip,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
   IconButton,
   Link,
   Skeleton,
+  Snackbar,
   Tooltip,
   Typography,
 } from "@mui/material";
@@ -40,11 +52,19 @@ interface SkillTarget {
 
 export function AdminEmployeeProfilePage() {
   const { id = "" } = useParams<{ id: string }>();
+  const { user: authUser } = useAuth();
   const { data, isLoading, isError } = useEmployeeProfileQuery(id);
+
+  const deactivateMutation = useDeactivateEmployeeMutation();
+  const activateMutation = useActivateEmployeeMutation();
 
   const [addOpen, setAddOpen] = useState(false);
   const [removeTarget, setRemoveTarget] = useState<SkillTarget | null>(null);
   const [editTarget, setEditTarget] = useState<SkillTarget | null>(null);
+  const [editEmployeeOpen, setEditEmployeeOpen] = useState(false);
+  const [deactivateConfirmOpen, setDeactivateConfirmOpen] = useState(false);
+  const [activateConfirmOpen, setActivateConfirmOpen] = useState(false);
+  const [snackMsg, setSnackMsg] = useState<string | null>(null);
 
   if (isLoading) {
     return (
@@ -105,20 +125,52 @@ export function AdminEmployeeProfilePage() {
         }}
       >
         <Box>
-          <Typography variant="h4">{data.fullName}</Typography>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Typography variant="h4">{data.fullName}</Typography>
+            {!data.isActive && (
+              <Chip label="Inactive" color="default" size="small" />
+            )}
+          </Box>
           {data.department && (
             <Typography variant="subtitle1" color="text.secondary">
               {data.department}
             </Typography>
           )}
         </Box>
-        <Button
-          variant="contained"
-          startIcon={<AddIcon />}
-          onClick={() => setAddOpen(true)}
-        >
-          Add Skill
-        </Button>
+        <Box sx={{ display: "flex", gap: 1 }}>
+          <Button
+            variant="outlined"
+            startIcon={<EditIcon />}
+            onClick={() => setEditEmployeeOpen(true)}
+          >
+            Edit
+          </Button>
+          {data.isActive ? (
+            <Button
+              variant="outlined"
+              color="error"
+              onClick={() => setDeactivateConfirmOpen(true)}
+              disabled={id === authUser?.id}
+            >
+              Deactivate
+            </Button>
+          ) : (
+            <Button
+              variant="outlined"
+              color="success"
+              onClick={() => setActivateConfirmOpen(true)}
+            >
+              Activate
+            </Button>
+          )}
+          <Button
+            variant="contained"
+            startIcon={<AddIcon />}
+            onClick={() => setAddOpen(true)}
+          >
+            Add Skill
+          </Button>
+        </Box>
       </Box>
 
       {data.skills.length === 0 ? (
@@ -220,6 +272,95 @@ export function AdminEmployeeProfilePage() {
           onClose={() => setEditTarget(null)}
         />
       )}
+
+      {/* Edit Employee Dialog */}
+      <EditEmployeeDialog
+        open={editEmployeeOpen}
+        employeeId={id}
+        initialFirstName={data.firstName}
+        initialLastName={data.lastName}
+        initialDepartmentId={data.departmentId ?? null}
+        initialRole={data.role ?? "Employee"}
+        callerId={authUser?.id ?? ""}
+        onClose={() => setEditEmployeeOpen(false)}
+        onSuccess={() => setSnackMsg("Employee details updated.")}
+      />
+
+      {/* Deactivate Confirm */}
+      <Dialog
+        open={deactivateConfirmOpen}
+        onClose={() => setDeactivateConfirmOpen(false)}
+      >
+        <DialogTitle>Deactivate Account</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to deactivate <strong>{data.fullName}</strong>
+            ? They will no longer be able to log in.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setDeactivateConfirmOpen(false)}>
+            Cancel
+          </Button>
+          <Button
+            color="error"
+            variant="contained"
+            disabled={deactivateMutation.isPending}
+            onClick={async () => {
+              await deactivateMutation.mutateAsync(id);
+              setDeactivateConfirmOpen(false);
+              setSnackMsg(`${data.fullName} has been deactivated.`);
+            }}
+          >
+            Deactivate
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Activate Confirm */}
+      <Dialog
+        open={activateConfirmOpen}
+        onClose={() => setActivateConfirmOpen(false)}
+      >
+        <DialogTitle>Activate Account</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Re-activate <strong>{data.fullName}</strong>? They will be able to
+            log in again.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setActivateConfirmOpen(false)}>Cancel</Button>
+          <Button
+            color="success"
+            variant="contained"
+            disabled={activateMutation.isPending}
+            onClick={async () => {
+              await activateMutation.mutateAsync(id);
+              setActivateConfirmOpen(false);
+              setSnackMsg(`${data.fullName} has been activated.`);
+            }}
+          >
+            Activate
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Snackbar */}
+      <Snackbar
+        open={!!snackMsg}
+        autoHideDuration={4000}
+        onClose={() => setSnackMsg(null)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          severity="success"
+          onClose={() => setSnackMsg(null)}
+          sx={{ width: "100%" }}
+        >
+          {snackMsg}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

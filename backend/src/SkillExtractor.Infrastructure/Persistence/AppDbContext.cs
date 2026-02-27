@@ -11,6 +11,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid
   public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
   public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+  public DbSet<Department> Departments => Set<Department>();
   public DbSet<Document> Documents => Set<Document>();
   public DbSet<Skill> Skills => Set<Skill>();
   public DbSet<EmployeeSkill> EmployeeSkills => Set<EmployeeSkill>();

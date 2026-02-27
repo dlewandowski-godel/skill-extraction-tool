@@ -1,21 +1,32 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using SkillExtractor.Application.Interfaces;
 using SkillExtractor.Infrastructure.Identity;
+using SkillExtractor.Infrastructure.Persistence;
 
 namespace SkillExtractor.Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
 {
+  private readonly AppDbContext _db;
   private readonly UserManager<ApplicationUser> _userManager;
 
-  public UserRepository(UserManager<ApplicationUser> userManager)
-      => _userManager = userManager;
+  public UserRepository(AppDbContext db, UserManager<ApplicationUser> userManager)
+  {
+    _db = db;
+    _userManager = userManager;
+  }
 
   public async Task<UserProfileInfo?> GetProfileInfoAsync(Guid userId, CancellationToken ct = default)
   {
-    var user = await _userManager.FindByIdAsync(userId.ToString());
+    var user = await _db.Users
+        .Include(u => u.Department)
+        .FirstOrDefaultAsync(u => u.Id == userId, ct);
     if (user is null) return null;
 
-    return new UserProfileInfo(userId, user.FullName, null); // Department added in Epic 7
+    var roles = await _userManager.GetRolesAsync(user);
+    var role = roles.FirstOrDefault();
+
+    return new UserProfileInfo(userId, user.FullName, user.FirstName, user.LastName, user.Department?.Name, user.DepartmentId, role, user.IsActive);
   }
 }

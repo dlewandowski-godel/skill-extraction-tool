@@ -1,6 +1,8 @@
 import { AdminRoute } from "@/components/auth/AdminRoute";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { AdminDashboardPage } from "@/pages/AdminDashboardPage";
+import { AdminDepartmentsPage } from "@/pages/AdminDepartmentsPage";
+import { AdminEmployeeListPage } from "@/pages/AdminEmployeeListPage";
 import { AdminEmployeeProfilePage } from "@/pages/AdminEmployeeProfilePage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { LoginPage } from "@/pages/LoginPage";
@@ -24,17 +26,16 @@ function App() {
 
         {/* Admin-only */}
         <Route element={<AdminRoute />}>
+          <Route path="/admin/employees" element={<AdminEmployeeListPage />} />
           <Route
             path="/admin/employees/:id"
             element={<AdminEmployeeProfilePage />}
           />
+          <Route path="/admin/departments" element={<AdminDepartmentsPage />} />
+          <Route path="/admin/dashboard" element={<AdminDashboardPage />} />
           <Route
-            path="/admin/dashboard"
-            element={<AdminDashboardPage />}
-          />
-          <Route
-            path="/admin/*"
-            element={<div>Admin area (coming soon)</div>}
+            path="/admin"
+            element={<Navigate to="/admin/employees" replace />}
           />
         </Route>
       </Route>

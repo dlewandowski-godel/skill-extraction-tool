@@ -24,7 +24,7 @@ public class GetMyProfileQueryHandlerTests
     _sut = new GetMyProfileQueryHandler(_skillRepo, _userRepo);
 
     _userRepo.GetProfileInfoAsync(Arg.Any<Guid>(), Arg.Any<CancellationToken>())
-        .Returns(new UserProfileInfo(UserId, "Alice Smith", null));
+        .Returns(new UserProfileInfo(UserId, "Alice Smith", "Alice", "Smith", null, null, "Employee", true));
 
     _skillRepo.GetWithSkillsByUserAsync(Arg.Any<Guid>(), Arg.Any<CancellationToken>())
         .Returns(new List<EmployeeSkill>());

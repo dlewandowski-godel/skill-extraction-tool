@@ -11,5 +11,10 @@ public record SkillDto(
 public record EmployeeProfileDto(
     Guid UserId,
     string FullName,
+    string FirstName,
+    string LastName,
     string? Department,
+    Guid? DepartmentId,
+    string? Role,
+    bool IsActive,
     List<SkillDto> Skills);

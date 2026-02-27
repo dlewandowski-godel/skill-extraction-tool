@@ -13,10 +13,7 @@ const mockActivity: UploadActivityDto[] = [
 
 describe("useUploadActivityQuery", () => {
   it("query key starts with ['analytics', 'upload-activity']", () => {
-    expect(UPLOAD_ACTIVITY_QUERY_KEY).toEqual([
-      "analytics",
-      "upload-activity",
-    ]);
+    expect(UPLOAD_ACTIVITY_QUERY_KEY).toEqual(["analytics", "upload-activity"]);
   });
 
   it("getUploadActivity resolves with activity data for default period", async () => {

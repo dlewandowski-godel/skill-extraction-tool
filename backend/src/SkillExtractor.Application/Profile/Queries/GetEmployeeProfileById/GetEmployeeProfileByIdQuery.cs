@@ -41,6 +41,6 @@ public class GetEmployeeProfileByIdQueryHandler : IRequestHandler<GetEmployeePro
         .ThenBy(s => s.SkillName)
         .ToList();
 
-    return new EmployeeProfileDto(request.EmployeeId, profile.FullName, profile.Department, skillDtos);
+    return new EmployeeProfileDto(request.EmployeeId, profile.FullName, profile.FirstName, profile.LastName, profile.Department, profile.DepartmentId, profile.Role, profile.IsActive, skillDtos);
   }
 }

@@ -96,7 +96,7 @@ public class AuthServiceTests : IDisposable
     var result = await _sut.LoginAsync(user.Email!, "correct");
 
     result.Succeeded.Should().BeFalse();
-    result.ErrorMessage.Should().Be("Invalid credentials.");
+    result.ErrorMessage.Should().Be("Account is deactivated.");
     // password check must NOT be called for inactive users
     await _userManager.DidNotReceive().CheckPasswordAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>());
   }

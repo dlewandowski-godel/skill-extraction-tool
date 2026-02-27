@@ -8,13 +8,13 @@ public record GetTopSkillsQuery(int Limit = 10) : IRequest<List<TopSkillDto>>;
 
 public class GetTopSkillsQueryHandler : IRequestHandler<GetTopSkillsQuery, List<TopSkillDto>>
 {
-    private readonly IAnalyticsRepository _repo;
+  private readonly IAnalyticsRepository _repo;
 
-    public GetTopSkillsQueryHandler(IAnalyticsRepository repo) => _repo = repo;
+  public GetTopSkillsQueryHandler(IAnalyticsRepository repo) => _repo = repo;
 
-    public Task<List<TopSkillDto>> Handle(GetTopSkillsQuery request, CancellationToken ct)
-    {
-        var limit = request.Limit is > 0 and <= 100 ? request.Limit : 10;
-        return _repo.GetTopSkillsAsync(limit, ct);
-    }
+  public Task<List<TopSkillDto>> Handle(GetTopSkillsQuery request, CancellationToken ct)
+  {
+    var limit = request.Limit is > 0 and <= 100 ? request.Limit : 10;
+    return _repo.GetTopSkillsAsync(limit, ct);
+  }
 }
