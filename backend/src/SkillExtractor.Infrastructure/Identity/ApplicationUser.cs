@@ -10,4 +10,7 @@ public class ApplicationUser : IdentityUser<Guid>
   public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
   public string FullName => $"{FirstName} {LastName}".Trim();
+
+  /// <summary>Populated in Epic 7 (employee management). Null until then.</summary>
+  public string? Department { get; set; }
 }

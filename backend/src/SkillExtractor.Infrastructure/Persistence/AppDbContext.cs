@@ -14,6 +14,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid
   public DbSet<Document> Documents => Set<Document>();
   public DbSet<Skill> Skills => Set<Skill>();
   public DbSet<EmployeeSkill> EmployeeSkills => Set<EmployeeSkill>();
+  public DbSet<DepartmentRequiredSkill> DepartmentRequiredSkills => Set<DepartmentRequiredSkill>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

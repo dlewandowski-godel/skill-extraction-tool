@@ -1,5 +1,6 @@
 import { AdminRoute } from "@/components/auth/AdminRoute";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
+import { AdminDashboardPage } from "@/pages/AdminDashboardPage";
 import { AdminEmployeeProfilePage } from "@/pages/AdminEmployeeProfilePage";
 import { DashboardPage } from "@/pages/DashboardPage";
 import { LoginPage } from "@/pages/LoginPage";
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/admin/employees/:id"
             element={<AdminEmployeeProfilePage />}
+          />
+          <Route
+            path="/admin/dashboard"
+            element={<AdminDashboardPage />}
           />
           <Route
             path="/admin/*"
