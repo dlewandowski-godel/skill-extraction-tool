@@ -1,14 +1,16 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SkillExtractor.Domain.Entities;
-using SkillExtractor.Infrastructure.Persistence.Configurations;
+using SkillExtractor.Infrastructure.Identity;
 
 namespace SkillExtractor.Infrastructure.Persistence;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 {
   public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-  public DbSet<User> Users => Set<User>();
+  public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

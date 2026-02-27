@@ -1,7 +1,7 @@
 # US-2.2 — Roles: Admin and User
 
 **Epic:** Epic 2 — Authentication & Authorization  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

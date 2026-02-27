@@ -1,8 +1,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS development
 WORKDIR /app
 EXPOSE 8080
+# Bind on all interfaces so other containers can reach the API.
+# --no-launch-profile prevents dotnet watch from reading launchSettings.json
+# (which sets applicationUrl=http://localhost:5070 and would override this).
 ENV ASPNETCORE_URLS=http://+:8080
-ENTRYPOINT ["dotnet", "watch", "run", "--project", "src/SkillExtractor.API/SkillExtractor.API.csproj"]
+ENTRYPOINT ["dotnet", "watch", "run", "--no-launch-profile", "--project", "src/SkillExtractor.API/SkillExtractor.API.csproj"]
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /app

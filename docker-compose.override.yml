@@ -12,6 +12,10 @@ services:
     environment:
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
       ASPNETCORE_ENVIRONMENT: Development
+      # Force binding to 0.0.0.0:8080 so other containers can reach the API.
+      # launchSettings.json sets applicationUrl=http://localhost:5070 which
+      # would otherwise win and make the API unreachable inside Docker.
+      ASPNETCORE_URLS: "http://+:8080"
 
   frontend:
     build:
@@ -22,3 +26,6 @@ services:
       - /app/node_modules
     environment:
       CHOKIDAR_USEPOLLING: "true"
+      # Tells the Vite dev server where to proxy /api requests.
+      # Inside Docker the backend is reachable by its service name, not localhost.
+      VITE_PROXY_TARGET: "http://api:8080"

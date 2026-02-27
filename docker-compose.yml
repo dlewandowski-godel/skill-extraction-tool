@@ -43,6 +43,10 @@ services:
     environment:
       ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
       Jwt__Secret: ${JWT_SECRET}
+      Jwt__Issuer: SkillExtractor
+      Jwt__Audience: SkillExtractor
+      Seed__AdminEmail: ${SEED_ADMIN_EMAIL:-admin@skillextractor.local}
+      Seed__AdminPassword: ${SEED_ADMIN_PASSWORD:-Admin@123!}
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Development}
     depends_on:
       postgres:
@@ -54,11 +58,11 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ""
     restart: unless-stopped
     ports:
       - "3000:3000"
-    environment:
-      VITE_API_URL: ${VITE_API_URL:-http://localhost:5000}
     depends_on:
       - api
 

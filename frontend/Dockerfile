@@ -3,7 +3,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-ARG VITE_API_URL=http://localhost:5000
+# Empty default: production builds use relative URLs (/api/...).
+# Nginx proxies /api/ to the backend container (see nginx.conf).
+# To bake in a different URL at image build time, pass:
+#   docker build --build-arg VITE_API_URL=https://myapi.example.com .
+ARG VITE_API_URL=
 ENV VITE_API_URL=$VITE_API_URL
 RUN npm run build
 
