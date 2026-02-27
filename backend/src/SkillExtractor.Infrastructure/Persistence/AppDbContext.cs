@@ -11,6 +11,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid
   public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
   public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+  public DbSet<Document> Documents => Set<Document>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

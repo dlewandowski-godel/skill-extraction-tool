@@ -1,7 +1,7 @@
 # US-3.3 — Document Processing Status
 
 **Epic:** Epic 3 — Document Upload  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

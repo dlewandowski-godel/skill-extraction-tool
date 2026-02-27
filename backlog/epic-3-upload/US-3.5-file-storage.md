@@ -1,7 +1,7 @@
 # US-3.5 — File Storage Persistence
 
 **Epic:** Epic 3 — Document Upload  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

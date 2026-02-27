@@ -52,11 +52,11 @@
 
 > Upload CV and IFU PDFs, store them, trigger processing.
 
-- [ ] [US-3.1 — Upload CV (PDF)](backlog/epic-3-upload/US-3.1-upload-cv.md)
-- [ ] [US-3.2 — Upload IFU (PDF)](backlog/epic-3-upload/US-3.2-upload-ifu.md)
-- [ ] [US-3.3 — Document processing status](backlog/epic-3-upload/US-3.3-processing-status.md)
-- [ ] [US-3.4 — File validation](backlog/epic-3-upload/US-3.4-file-validation.md)
-- [ ] [US-3.5 — File storage persistence](backlog/epic-3-upload/US-3.5-file-storage.md)
+- [x] [US-3.1 — Upload CV (PDF)](backlog/epic-3-upload/US-3.1-upload-cv.md)
+- [x] [US-3.2 — Upload IFU (PDF)](backlog/epic-3-upload/US-3.2-upload-ifu.md)
+- [x] [US-3.3 — Document processing status](backlog/epic-3-upload/US-3.3-processing-status.md)
+- [x] [US-3.4 — File validation](backlog/epic-3-upload/US-3.4-file-validation.md)
+- [x] [US-3.5 — File storage persistence](backlog/epic-3-upload/US-3.5-file-storage.md)
 
 ---
 

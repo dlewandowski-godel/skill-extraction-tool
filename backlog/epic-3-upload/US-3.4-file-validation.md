@@ -1,7 +1,7 @@
 # US-3.4 — File Validation
 
 **Epic:** Epic 3 — Document Upload  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done`
 
 ---
 

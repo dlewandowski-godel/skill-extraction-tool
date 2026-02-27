@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SkillExtractor.Application.Interfaces;
 using SkillExtractor.Infrastructure.Identity;
 using SkillExtractor.Infrastructure.Persistence;
+using SkillExtractor.Infrastructure.Repositories;
 using SkillExtractor.Infrastructure.Services;
 
 namespace SkillExtractor.Infrastructure;
@@ -37,6 +38,8 @@ public static class DependencyInjection
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IFileStorageService, FileStorageService>();
+        services.AddScoped<IDocumentRepository, DocumentRepository>();
 
         return services;
     }

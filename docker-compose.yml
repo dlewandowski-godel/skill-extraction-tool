@@ -48,6 +48,7 @@ services:
       Seed__AdminEmail: ${SEED_ADMIN_EMAIL:-admin@skillextractor.local}
       Seed__AdminPassword: ${SEED_ADMIN_PASSWORD:-Admin@123!}
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Development}
+      FILE_STORAGE_PATH: /app/uploads
     depends_on:
       postgres:
         condition: service_healthy
