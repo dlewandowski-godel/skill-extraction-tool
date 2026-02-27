@@ -10,3 +10,4 @@ I want to have at least several pages, routing. I want to first create a backlog
 4. start working on epic-1. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 1.
 5. we need a register functoinality for frontend and backend as well for normal users. Also there is a lot of errors. fix them.
 6. How to manually test this epic?
+7. start working on epic-4. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 4. after that make sure you've implemented everything.

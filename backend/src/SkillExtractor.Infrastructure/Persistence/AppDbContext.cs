@@ -12,6 +12,8 @@ public class AppDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid
 
   public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
   public DbSet<Document> Documents => Set<Document>();
+  public DbSet<Skill> Skills => Set<Skill>();
+  public DbSet<EmployeeSkill> EmployeeSkills => Set<EmployeeSkill>();
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {

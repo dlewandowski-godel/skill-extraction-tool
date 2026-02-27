@@ -1,7 +1,7 @@
 # US-4.5 — Persist Extracted Skills
 
 **Epic:** Epic 4 — Skill Extraction Engine  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done` <!-- change to [x] Done when complete -->
 
 ---
 

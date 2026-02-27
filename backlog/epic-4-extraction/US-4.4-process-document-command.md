@@ -1,7 +1,7 @@
 # US-4.4 — ProcessDocumentCommand via MediatR
 
 **Epic:** Epic 4 — Skill Extraction Engine  
-**Status:** `[ ] Not Started` <!-- change to [x] Done when complete -->
+**Status:** `[x] Done` <!-- change to [x] Done when complete -->
 
 ---
 

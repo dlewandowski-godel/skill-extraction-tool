@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SkillExtractor.Application.Interfaces;
+using SkillExtractor.Domain.Interfaces;
 using SkillExtractor.Infrastructure.Identity;
 using SkillExtractor.Infrastructure.Persistence;
 using SkillExtractor.Infrastructure.Repositories;
@@ -40,6 +41,14 @@ public static class DependencyInjection
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IFileStorageService, FileStorageService>();
         services.AddScoped<IDocumentRepository, DocumentRepository>();
+        services.AddScoped<ISkillRepository, SkillRepository>();
+        services.AddScoped<IEmployeeSkillRepository, EmployeeSkillRepository>();
+
+        // Extraction pipeline (singletons — stateless or own their state)
+        services.AddSingleton<IPdfTextExtractor, PdfPigTextExtractor>();
+        services.AddSingleton<ITaxonomyCache, TaxonomyCache>();
+        services.AddSingleton<ISkillExtractor, MlNetSkillExtractor>();
+        services.AddSingleton<IProficiencyInferenceService, ProficiencyInferenceService>();
 
         return services;
     }

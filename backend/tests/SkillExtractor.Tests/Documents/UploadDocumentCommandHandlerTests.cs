@@ -4,6 +4,7 @@ using NSubstitute;
 using SkillExtractor.Application.Documents.Commands.ProcessDocument;
 using SkillExtractor.Application.Documents.Commands.UploadDocument;
 using SkillExtractor.Application.Interfaces;
+using SkillExtractor.Domain.Entities;
 using SkillExtractor.Domain.Enums;
 
 namespace SkillExtractor.Tests.Documents;
@@ -132,11 +133,11 @@ public class UploadDocumentCommandHandlerTests
     var userId = Guid.NewGuid();
 
     // Simulate an existing active document for same user+type
-    var existingDoc = Domain.Entities.Document.Create(userId, "old.pdf", "/uploads/old.pdf", DocumentType.CV);
+    var existingDoc = Document.Create(userId, "old.pdf", "/uploads/old.pdf", DocumentType.CV);
 
     _documentRepository
         .GetActiveByUserAndTypeAsync(userId, DocumentType.CV, Arg.Any<CancellationToken>())
-        .Returns([existingDoc]);
+        .Returns(new List<Document> { existingDoc });
 
     _fileStorageService
         .SaveAsync(Arg.Any<Guid>(), Arg.Any<Stream>(), Arg.Any<DocumentType>(), Arg.Any<CancellationToken>())

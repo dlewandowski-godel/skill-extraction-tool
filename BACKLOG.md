@@ -13,13 +13,13 @@
 | [Epic 1 — Project Setup & Infrastructure](#epic-1--project-setup--infrastructure) | 5 | 0 |
 | [Epic 2 — Authentication & Authorization](#epic-2--authentication--authorization) | 6 | 0 |
 | [Epic 3 — Document Upload](#epic-3--document-upload) | 5 | 0 |
-| [Epic 4 — Skill Extraction Engine](#epic-4--skill-extraction-engine) | 5 | 0 |
+| [Epic 4 — Skill Extraction Engine](#epic-4--skill-extraction-engine) | 5 | 5 |
 | [Epic 5 — Employee Skill Profile](#epic-5--employee-skill-profile) | 6 | 0 |
 | [Epic 6 — Admin Dashboard & Analytics](#epic-6--admin-dashboard--analytics) | 6 | 0 |
 | [Epic 7 — Employee Management (Admin)](#epic-7--employee-management-admin) | 5 | 0 |
 | [Epic 8 — Skill Taxonomy Management (Admin)](#epic-8--skill-taxonomy-management-admin) | 5 | 0 |
 | [Epic 9 — Frontend Shell & UX](#epic-9--frontend-shell--ux) | 5 | 0 |
-| **Total** | **48** | **0** |
+| **Total** | **48** | **5** |
 
 ---
 
@@ -64,11 +64,11 @@
 
 > PDF → text → keyword matching → taxonomy mapping → skill records.
 
-- [ ] [US-4.1 — PDF text extraction (PdfPig)](backlog/epic-4-extraction/US-4.1-pdf-text-extraction.md)
-- [ ] [US-4.2 — ML.NET tokenization + taxonomy matching](backlog/epic-4-extraction/US-4.2-mlnet-matching.md)
-- [ ] [US-4.3 — Proficiency level inference](backlog/epic-4-extraction/US-4.3-proficiency-inference.md)
-- [ ] [US-4.4 — ProcessDocumentCommand via MediatR](backlog/epic-4-extraction/US-4.4-process-document-command.md)
-- [ ] [US-4.5 — Persist extracted skills](backlog/epic-4-extraction/US-4.5-persist-skills.md)
+- [x] [US-4.1 — PDF text extraction (PdfPig)](backlog/epic-4-extraction/US-4.1-pdf-text-extraction.md)
+- [x] [US-4.2 — ML.NET tokenization + taxonomy matching](backlog/epic-4-extraction/US-4.2-mlnet-matching.md)
+- [x] [US-4.3 — Proficiency level inference](backlog/epic-4-extraction/US-4.3-proficiency-inference.md)
+- [x] [US-4.4 — ProcessDocumentCommand via MediatR](backlog/epic-4-extraction/US-4.4-process-document-command.md)
+- [x] [US-4.5 — Persist extracted skills](backlog/epic-4-extraction/US-4.5-persist-skills.md)
 
 ---
 

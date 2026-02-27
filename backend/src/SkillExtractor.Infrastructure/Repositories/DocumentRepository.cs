@@ -20,6 +20,11 @@ public class DocumentRepository : IDocumentRepository
     await _db.Documents.AddAsync(document, cancellationToken);
   }
 
+  public Task<Document?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+  {
+    return _db.Documents.FirstOrDefaultAsync(d => d.Id == id, cancellationToken);
+  }
+
   public Task<List<Document>> GetActiveByUserAndTypeAsync(
       Guid userId,
       DocumentType documentType,
