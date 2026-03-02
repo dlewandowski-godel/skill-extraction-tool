@@ -84,8 +84,10 @@ public class DatabaseSeederTests : IDisposable
         // Act
         await _sut.SeedAsync();
 
-        // Assert
-        await _userManager.DidNotReceive().CreateAsync(Arg.Any<ApplicationUser>(), Arg.Any<string>());
+        // Assert — admin user specifically must NOT be created
+        await _userManager.DidNotReceive().CreateAsync(
+            Arg.Is<ApplicationUser>(u => u.Email == "admin@test.local"),
+            Arg.Any<string>());
     }
 
     [Fact]

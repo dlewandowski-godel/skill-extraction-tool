@@ -1,0 +1,83 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1092>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(Instructions for Use - Model Beta Diagnostic Device) Tj
+0 -16 Td
+(Document ID: IFU-2024-BETA-002) Tj
+0 -16 Td
+(Version: 2.0 | Date: 2024-03-01) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(1. INTENDED USE) Tj
+0 -16 Td
+(Diagnostic device for laboratory environments.) Tj
+0 -16 Td
+(Integration requires: Python, Data Engineering, SQL) Tj
+0 -16 Td
+(Analytics: Machine Learning, Deep Learning, NLP) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(2. TECHNICAL REQUIREMENTS) Tj
+0 -16 Td
+(Backend: Python with FastAPI or ASP.NET Core) Tj
+0 -16 Td
+(ML Framework: PyTorch or TensorFlow) Tj
+0 -16 Td
+(Data Engineering: Apache Kafka, ETL pipelines) Tj
+0 -16 Td
+(Database: PostgreSQL, MongoDB or SQL Server) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(3. SOFTWARE INTEGRATION) Tj
+0 -16 Td
+(REST API and GraphQL endpoints) Tj
+0 -16 Td
+(Containerised deployment with Docker) Tj
+0 -16 Td
+(Monitoring with Azure or AWS CloudWatch) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(4. TESTING & VALIDATION) Tj
+0 -16 Td
+(Unit testing and integration testing required) Tj
+0 -16 Td
+(TDD approach with pytest) Tj
+0 -16 Td
+(CI/CD via GitHub Actions) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001373 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1441
+%%EOF

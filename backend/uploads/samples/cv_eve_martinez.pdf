@@ -1,0 +1,81 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1038>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(Eve Martinez - QA Engineer) Tj
+0 -16 Td
+(Email: eve.martinez@example.com) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(SKILLS) Tj
+0 -16 Td
+(Testing: Unit testing, Integration testing, TDD, BDD) Tj
+0 -16 Td
+(Automation: Python, pytest, Selenium, Cypress) Tj
+0 -16 Td
+(Tools: Git, Docker, Jira, Agile) Tj
+0 -16 Td
+(CI/CD: Jenkins, GitHub Actions) Tj
+0 -16 Td
+(Languages: Python, JavaScript, SQL) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EXPERIENCE) Tj
+0 -16 Td
+(QA Lead - QualityFirst \(2020-2026\)) Tj
+0 -16 Td
+(  - Designed test strategies for microservices) Tj
+0 -16 Td
+(  - Automated regression suite with pytest and Selenium) Tj
+0 -16 Td
+(  - BDD with Cucumber and behaviour driven development) Tj
+0 -16 Td
+(  - Continuous integration pipelines in Jenkins) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(QA Engineer - TestingHouse \(2018-2020\)) Tj
+0 -16 Td
+(  - Manual and exploratory testing) Tj
+0 -16 Td
+(  - SQL queries for data validation) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EDUCATION) Tj
+0 -16 Td
+(BSc Computer Science - Lodz University \(2018\)) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001319 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1387
+%%EOF

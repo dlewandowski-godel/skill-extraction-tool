@@ -12,7 +12,7 @@ import {
   CardContent,
   CardHeader,
   CircularProgress,
-  Grid,
+  Grid2 as Grid,
   Typography,
 } from "@mui/material";
 import { useQueryClient } from "@tanstack/react-query";
@@ -202,7 +202,7 @@ function SkillGapChart() {
               width={130}
               tick={{ fontSize: 12 }}
             />
-            <Tooltip formatter={(value: number) => [`${value}%`, "Gap"]} />
+            <Tooltip formatter={(value: number | undefined) => [`${value ?? 0}%`, "Gap"]} />
             <Bar dataKey="gapPercent" name="Gap %" radius={[0, 4, 4, 0]}>
               {data.map((entry, i) => (
                 <Cell
@@ -288,7 +288,7 @@ function ProficiencyDistributionChart() {
               />
             ))}
           </Pie>
-          <Tooltip formatter={(value: number, name: string) => [value, name]} />
+          <Tooltip formatter={(value: number | undefined, name: string | undefined) => [value ?? 0, name ?? ""]} />
           <Legend />
         </PieChart>
       </ResponsiveContainer>

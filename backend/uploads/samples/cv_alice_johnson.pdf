@@ -1,0 +1,79 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1042>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(Alice Johnson - Software Engineer) Tj
+0 -16 Td
+(Email: alice.johnson@example.com) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(SKILLS) Tj
+0 -16 Td
+(Programming: C#, ASP.NET Core, Python, SQL) Tj
+0 -16 Td
+(Frameworks: React, .NET, Entity Framework) Tj
+0 -16 Td
+(DevOps: Docker, Git, CI/CD, Azure) Tj
+0 -16 Td
+(Practices: Agile, Scrum, Software Architecture, Testing) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EXPERIENCE) Tj
+0 -16 Td
+(Senior Software Engineer - TechCorp \(2020-2026\)) Tj
+0 -16 Td
+(  - Developed microservices in C# and ASP.NET Core) Tj
+0 -16 Td
+(  - Built React frontends with TypeScript) Tj
+0 -16 Td
+(  - Managed PostgreSQL databases and wrote complex SQL queries) Tj
+0 -16 Td
+(  - Containerised workloads with Docker and Kubernetes) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Software Engineer - StartupXY \(2018-2020\)) Tj
+0 -16 Td
+(  - Python scripts for data pipelines) Tj
+0 -16 Td
+(  - Unit testing with xUnit and pytest) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EDUCATION) Tj
+0 -16 Td
+(BSc Computer Science - University of Warsaw \(2018\)) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001323 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1391
+%%EOF

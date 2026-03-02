@@ -47,6 +47,8 @@ services:
       Jwt__Audience: SkillExtractor
       Seed__AdminEmail: ${SEED_ADMIN_EMAIL:-admin@skillextractor.local}
       Seed__AdminPassword: ${SEED_ADMIN_PASSWORD:-Admin@123!}
+      Seed__EmployeePassword: ${SEED_EMPLOYEE_PASSWORD:-Employee@123!}
+      Seed__ForceReseed: ${SEED_FORCE_RESEED:-false}
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Development}
       FILE_STORAGE_PATH: /app/uploads
     depends_on:

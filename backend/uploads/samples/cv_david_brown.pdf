@@ -1,0 +1,81 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1000>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(David Brown - Frontend Engineer) Tj
+0 -16 Td
+(Email: david.brown@example.com) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(SKILLS) Tj
+0 -16 Td
+(Languages: JavaScript, TypeScript, HTML, CSS) Tj
+0 -16 Td
+(Frameworks: React, Angular, Vue.js) Tj
+0 -16 Td
+(Backend: Node.js, Python, FastAPI) Tj
+0 -16 Td
+(Tooling: Git, Webpack, Vite, Docker) Tj
+0 -16 Td
+(Practices: API Design, Agile, Testing) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EXPERIENCE) Tj
+0 -16 Td
+(Frontend Engineer - WebWorks \(2021-2026\)) Tj
+0 -16 Td
+(  - React and TypeScript SPAs with React hooks) Tj
+0 -16 Td
+(  - Vue.js component libraries) Tj
+0 -16 Td
+(  - RESTful API integration and OpenAPI specs) Tj
+0 -16 Td
+(  - Unit and integration testing with Jest) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Junior Frontend Developer - PixelStudio \(2019-2021\)) Tj
+0 -16 Td
+(  - Angular applications) Tj
+0 -16 Td
+(  - Node.js microservices) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EDUCATION) Tj
+0 -16 Td
+(BSc Software Engineering - Wroclaw University \(2019\)) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001281 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1349
+%%EOF

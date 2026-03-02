@@ -163,3 +163,30 @@ dotnet ef migrations remove \
 | EF migration error on startup | Check Postgres health: `docker compose ps postgres`. Rebuild: `docker compose down -v && docker compose up --build` |
 | pgAdmin shows no servers | Add a server manually: host `postgres`, port `5432`, credentials from `.env` |
 | Frontend shows blank page | Check browser console; ensure `VITE_API_URL` is set and the API is running |
+
+## Prompts
+1.I want to create new project.
+Skill extraction tool. An app that reads a new employee's CV and IFU, extracts skills and saves them in a structured format.
+For frontend use React, typescript, mui and tanstack query. Try to use composition and tanstack query for state management.
+For backend use .net 10, MediatR,ef core, clean architecture with Commands and use DDD. Ask clarifying questions. Create docker-compose that allows to run everything with a single command docker-compose up. For db use postgres. I want unit tests for both frontend and backend. I want an admin panel. I want simple login and 2 roles: Admin and User. Add some pretty graphs for admin view.
+I want to have at least several pages, routing. I want to first create a backlog of epics and user stories. Then I will work on them 1 by 1 with you.
+
+2.I want you generate this backlog as folders and files in this project. I also want a way of ticking them off so I could see what is done
+
+3. start working on epic-1. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 1.
+4. start working on epic-1. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 1.
+5. we need a register functoinality for frontend and backend as well for normal users. Also there is a lot of errors. fix them.
+6. How to manually test this epic?
+7. start working on epic-4. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 4. after that make sure you've implemented everything.
+8. start working on epic-5. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 5. after that make sure you've implemented everything.
+9.how do I test manually everything up till epic 5? I will docker compose up and start clicking around the frontend app
+10.start working on epic-6. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 6. after that make sure you've implemented everything.
+11.start working on epic-7. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 7. after that make sure you've implemented everything.
+12. start working on epic-8. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 8. after that make sure you've implemented everything.
+13. start working on epic-8. After you're done with a single user story, build and run the tests. If that fails, fix them. if everything works, move on to the next user story. finish this way entire epic 8. after that make sure you've implemented everything.
+14. create new folder with example cvs and  ifu files. clear database. create seed data that runs automatically on start like with admin account.
+
+## Tools
+Claude Sonnet 4.6 using copilot and vscode.
+I started from Plan to create a backlog, then agent all the way through.
+In normal project I always start a user story with a Plan mode to review it thoroughly. Then move on to agent mode to make smaller changes / ask questions. Ask mode feels unnecesary. I didn't use any MCP server, because for the scope of this project it seemed unnecesary.

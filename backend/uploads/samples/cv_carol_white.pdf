@@ -1,0 +1,81 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1071>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(Carol White - DevOps / Platform Engineer) Tj
+0 -16 Td
+(Email: carol.white@example.com) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(SKILLS) Tj
+0 -16 Td
+(Cloud: AWS, Azure, Google Cloud) Tj
+0 -16 Td
+(Containers: Docker, Kubernetes, k8s) Tj
+0 -16 Td
+(IaC: Terraform, infrastructure as code) Tj
+0 -16 Td
+(CI/CD: GitHub Actions, Jenkins, continuous integration) Tj
+0 -16 Td
+(Scripting: Python, Bash, Go) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EXPERIENCE) Tj
+0 -16 Td
+(Platform Engineer - CloudOps Ltd \(2020-2026\)) Tj
+0 -16 Td
+(  - Managed Kubernetes clusters on AWS and Azure) Tj
+0 -16 Td
+(  - Wrote Terraform modules for infrastructure as code) Tj
+0 -16 Td
+(  - Built CI/CD pipelines with GitHub Actions) Tj
+0 -16 Td
+(  - Implemented Docker containerisation across 20+ services) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Systems Administrator - NetSys \(2018-2020\)) Tj
+0 -16 Td
+(  - Linux administration, shell scripting) Tj
+0 -16 Td
+(  - AWS EC2 and S3 management) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EDUCATION) Tj
+0 -16 Td
+(BSc Information Technology - Poznan University \(2018\)) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001352 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1420
+%%EOF

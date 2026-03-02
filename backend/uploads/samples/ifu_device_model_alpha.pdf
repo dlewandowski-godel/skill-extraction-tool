@@ -1,0 +1,81 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1159>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(Instructions for Use - Model Alpha Surgical Robot) Tj
+0 -16 Td
+(Document ID: IFU-2024-ALPHA-001) Tj
+0 -16 Td
+(Version: 3.2 | Date: 2024-01-15) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(1. INTENDED USE) Tj
+0 -16 Td
+(The Model Alpha is intended for use by trained medical professionals.) Tj
+0 -16 Td
+(Requires knowledge of: Computer Vision, Machine Learning, Python) Tj
+0 -16 Td
+(Software stack: TensorFlow, OpenCV, real-time data pipelines) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(2. TECHNICAL REQUIREMENTS) Tj
+0 -16 Td
+(Operating System: Linux / Windows) Tj
+0 -16 Td
+(Programming Interface: Python 3.10+, REST API, API Design) Tj
+0 -16 Td
+(Infrastructure: Docker, Kubernetes, AWS or Azure) Tj
+0 -16 Td
+(Database: PostgreSQL for logging) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(3. SAFETY REQUIREMENTS) Tj
+0 -16 Td
+(Software must be tested with unit testing and integration testing) Tj
+0 -16 Td
+(Deployment via CI/CD pipelines only) Tj
+0 -16 Td
+(Code versioned in Git with code review process) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(4. MAINTENANCE) Tj
+0 -16 Td
+(Requires C# or Python engineers for firmware updates) Tj
+0 -16 Td
+(Documentation in Swagger / OpenAPI format) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001440 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1508
+%%EOF

@@ -1,0 +1,81 @@
+%PDF-1.4
+1 0 obj
+<</Type /Catalog /Pages 2 0 R>>
+endobj
+2 0 obj
+<</Type /Pages /Kids [3 0 R] /Count 1>>
+endobj
+3 0 obj
+<</Type /Page /MediaBox [0 0 612 792] /Parent 2 0 R /Resources <</Font <</F1 5 0 R>>>> /Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 1155>>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+(Bob Smith - Data Scientist) Tj
+0 -16 Td
+(Email: bob.smith@example.com) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(SKILLS) Tj
+0 -16 Td
+(Languages: Python, SQL, R) Tj
+0 -16 Td
+(ML Frameworks: TensorFlow, scikit-learn, PyTorch) Tj
+0 -16 Td
+(ML Topics: Machine Learning, Deep Learning, Natural Language Processing) Tj
+0 -16 Td
+(Data: pandas, numpy, Apache Spark, Data Engineering) Tj
+0 -16 Td
+(Tools: Docker, Git, Jupyter) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EXPERIENCE) Tj
+0 -16 Td
+(Senior Data Scientist - DataInsights \(2021-2026\)) Tj
+0 -16 Td
+(  - Built machine learning models for churn prediction using scikit-learn) Tj
+0 -16 Td
+(  - Implemented deep learning pipelines with TensorFlow and Keras) Tj
+0 -16 Td
+(  - NLP text classification with transformers and PyTorch) Tj
+0 -16 Td
+(  - Engineered ETL data pipelines with Apache Spark) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(Data Analyst - AnalyticsCo \(2019-2021\)) Tj
+0 -16 Td
+(  - SQL queries and reporting using PostgreSQL) Tj
+0 -16 Td
+(  - Data analysis with pandas and numpy) Tj
+0 -16 Td
+() Tj
+0 -16 Td
+(EDUCATION) Tj
+0 -16 Td
+(MSc Machine Learning - Warsaw University of Technology \(2019\)) Tj
+0 -16 Td
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000056 00000 n 
+0000000111 00000 n 
+0000000231 00000 n 
+0000001436 00000 n 
+trailer
+<</Size 6 /Root 1 0 R>>
+startxref
+1504
+%%EOF
